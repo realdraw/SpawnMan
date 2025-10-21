@@ -10,23 +10,23 @@ unreal python plugin
 
 설정 방법:
 
-	1.	언리얼 엔진 설치 경로를 찾습니다.
+* 언리얼 엔진 설치 경로를 찾습니다.
 ```
 예) C:\Program Files\Epic Games\UE_5.4\Engine\Plugins
 ```	
-	2.	Plugins 폴더 내부에 사용자 전용 폴더를 생성합니다.
+* Plugins 폴더 내부에 사용자 전용 폴더를 생성합니다.
 ```
 예) MyCompany 또는 CustomTools
 ```	
-	3.	제작한 플러그인 폴더를 그 안에 넣습니다.
+* 제작한 플러그인 폴더를 그 안에 넣습니다.
 ```
 예) C:\Program Files\Epic Games\UE_5.4\Engine\Plugins\MyCompany\MyPlugin
 ```	
-	4.	언리얼 에디터를 재시작하면,
+* 언리얼 에디터를 재시작하면,
 ```
 Edit → Plugins → Installed → Engine 탭에서 플러그인을 확인할 수 있습니다.
 ```	
-	5.	플러그인을 활성화하고, 에디터 재시작 안내가 뜨면 다시 실행합니다.
+* 플러그인을 활성화하고, 에디터 재시작 안내가 뜨면 다시 실행합니다.
 
 주의사항:
 	•	엔진 폴더 수정 시 관리자 권한이 필요합니다.
@@ -42,19 +42,19 @@ Edit → Plugins → Installed → Engine 탭에서 플러그인을 확인할 �
 특정 프로젝트 전용 플러그인을 개발할 때 적합합니다.
 
 설정 방법:
-	1.	프로젝트 폴더를 엽니다.
+* 프로젝트 폴더를 엽니다.
 ```
 예) D:\workspace\MyGameProject
 ```
-	2.	Plugins 폴더가 없다면 직접 새로 생성합니다.
+* Plugins 폴더가 없다면 직접 새로 생성합니다.
 	
-	3.	플러그인 폴더를 그 안에 복사합니다.
+* 플러그인 폴더를 그 안에 복사합니다.
 ```
 예) D:\workspace\MyGameProject\Plugins\MyPlugin
 ```	
-	4.	언리얼 에디터를 재시작합니다.
+* 언리얼 에디터를 재시작합니다.
 	
-	5.	Edit → Plugins → Installed → Project 탭에서 플러그인을 확인하고 활성화합니다.
+* Edit → Plugins → Installed → Project 탭에서 플러그인을 확인하고 활성화합니다.
 
 주의사항:
 	•	프로젝트 내부에 포함되므로 Git 등 버전 관리에 용이합니다.
