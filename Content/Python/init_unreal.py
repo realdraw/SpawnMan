@@ -17,7 +17,7 @@ def _get_selected_asset():
     return asset
 
 
-def place_from_viewport(gap_cm: float = 2.0, match_yaw: bool = True):
+def place_from_viewport(gap_cm: float = 2.0):
     base_actor = _get_first_selected_sma()
     if not base_actor:
         unreal.log_warning("No StaticMeshActor selected in the level.")
@@ -49,9 +49,6 @@ def place_from_viewport(gap_cm: float = 2.0, match_yaw: bool = True):
     smc.set_static_mesh(mesh_to_place)
     smc.set_mobility(unreal.ComponentMobility.MOVABLE)
 
-    # 혹시 미세 겹침이 있으면 살짝 위로 밀어올림(옵션)
-    # new_actor.add_actor_world_offset(unreal.Vector(0, 0, 0.5), sweep=True)
-
     unreal.log(f"Spawned above '{base_actor.get_actor_label()}' at {spawn_loc}")
 
 
@@ -59,20 +56,19 @@ def _add_context_menu():
     menus = unreal.ToolMenus.get()
 
     my_menu = menus.extend_menu("LevelEditor.ActorContextMenu")
-    section_name = f"CameraPlaceTool"
+    section_name = f"SpwnMan"
 
-    my_menu.add_section(section_name, "Camera Place Tool")
+    my_menu.add_section(section_name, "Spwn Man Tool")
 
     entry = unreal.ToolMenuEntry(
-        name="MyPyTools.PyPlaceCtx",
+        name="SpwnMan.SpwnManCtx",
         type=unreal.MultiBlockType.MENU_ENTRY
     )
-    entry.set_label("Py Place From Camera")
-    entry.set_tool_tip("Place selected asset in front of viewport camera")
+    entry.set_label("Spwn man")
     entry.set_string_command(
         type=unreal.ToolMenuStringCommandType.PYTHON,
         custom_type="",
-        string="import init_unreal as M; M.place_from_viewport()"
+        string="place_from_viewport()"
     )
     my_menu.add_menu_entry(section_name, entry)
 
